@@ -3,6 +3,8 @@ from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import datasets
 from torchvision.transforms import ToTensor
+import matplotlib
+matplotlib.use('TkAgg')  # Use TkAgg backend for matplotlib
 import matplotlib.pyplot as plt
 
 def main():
