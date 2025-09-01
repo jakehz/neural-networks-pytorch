@@ -20,7 +20,6 @@ def display_dataset(d: DataLoader, figsize =(8,8), cols=4, rows=4):
         plt.imshow(img.squeeze(), cmap="gray")
     plt.show() 
 
-
 def main():
     training_data = datasets.FashionMNIST(
         root="data",
