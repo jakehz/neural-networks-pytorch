@@ -3,6 +3,7 @@ from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import datasets
 from torchvision.transforms import ToTensor
+from models.DressClassifier import *
 import matplotlib
 matplotlib.use('TkAgg')  # Use TkAgg backend for matplotlib
 import matplotlib.pyplot as plt
@@ -45,7 +46,16 @@ def main():
         print(f"Shape of y: {y.shape} {y.dtype}")
         break
     
-    display_dataset(training_data)
+    # display_dataset(training_data)
+
+    loss_fn = nn.CrossEntropyLoss() 
+    optimizer = torch
+    epochs = 5
+    for t in range(epochs):
+        print(f"Epoch {t+1}\n-------------------------------")
+        train(train_dataloader, model, loss_fn, optimizer)
+        test(test_dataloader, model, loss_fn)
+    print("Done!")
 
 if __name__ == "__main__":
     if torch.cuda.is_available():
